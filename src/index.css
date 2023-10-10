@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.layout {
+  width: 100vw;
+  height: 100dvh;
+}
+.imga {
+  width: 100%;
+  height: 220px;
+}
+
+.cap-page-animation-true {
+  transition: all 200ms !important;
+  border-width: 1px;
+  padding: 8px 20px 20px 20px;
+  height: 83.333333%;
+  width: 83.333333%;
+}
+.cap-page-animation-false {
+  transition: all 0ms ease-in !important;
+  width: 0;
+  height: 0;
+}
+.scb::-webkit-scrollbar {
+  width: 0;
+}
+.sd {
+  box-shadow: 0px 0px 150px 700px rgba(0, 0, 0, 0.75);
+}
+
+.on {
+  left: 0;
+}
+.off {
+  left: -5000px;
+}
+.nav-bar {
+  position: absolute;
+  transition: all 150ms ease-in-out;
+}
+.h {
+  height: calc(100dvh - 48px);
+}
+.sha {
+  box-shadow: 50px 0px 180px 76px rgba(0, 0, 0, 0.57);
+}
+
+.borde {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.596);
+}
+
+.borde-t {
+  border-top: 1px solid rgba(0, 0, 0, 0.596);
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+}
