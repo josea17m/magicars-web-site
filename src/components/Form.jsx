@@ -7,26 +7,41 @@ const Form = () => {
       </h3>
 
       <form
-        data-netlify="true"
+        action="https://formsubmit.co/magicarscolombia@gmail.com"
+        method="post"
         name="register"
         className=" flex flex-col gap-10 p-5 border-2 border-black rounded-xl mt-4"
-        action=""
       >
         <label className="flex flex-col justify-between">
           <span>Nombre completo:</span>
           <input
-            className="bg-gray-200 outline-none border-b-[1px] border-gray-400"
+            className="bg-gray-200 p-2 outline-none border-b-[1px] mt-2 font-semibold border-gray-400"
             type="text"
-            name="name"
+            name="Nombre"
+            required
+            autoComplete="true"
           />
         </label>
         <label className="flex flex-col justify-between">
           <span>Correo Electrónico:</span>
           <input
-            className="bg-gray-200 outline-none border-b-[1px] border-gray-400"
+            className="bg-gray-200 p-2 outline-none border-b-[1px] mt-2 font-semibold border-gray-400"
             type="email"
-            name="email"
-            id=""
+            name="Email"
+            required
+            autoComplete="true"
+          />
+        </label>
+        <label className="flex flex-col justify-between">
+          <span>Número de teléfono:</span>
+          <input
+            className="bg-gray-200 p-2 outline-none border-b-[1px] mt-2 font-semibold border-gray-400"
+            type="number"
+            name="Número de télefono"
+            minLength="2"
+            pattern="^[0-9]-"
+            required
+            autoComplete="true"
           />
         </label>
         <button

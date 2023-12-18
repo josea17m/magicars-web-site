@@ -1,23 +1,20 @@
 /* eslint-disable react/prop-types */
 const CapPage = ({ image, tile, setModal, list, modal }) => {
   return (
-    <div
-      className={`${
-        modal ? "layout" : "w-0 h-0"
-      } fixed top-0 flex items-center z-10 justify-center`}
-    >
+    <div onClick={() => setModal(false)} className={`${modal ? "layout" : "w-0 h-0"} z-20 absolute ease-in onsd`}>
       <div
         className={`${
-          modal
-            ? "md:w-1/3 sd cap-page-animation-true"
-            : "cap-page-animation-false"
-        }  text-black border-black cap-page-animation scb overflow-auto rounded-xl bg-white`}
+          modal ? "layout" : "w-0 h-0"
+        } fixed top-0 flex  items-center z-10 justify-center`}
       >
-        {modal ? (
-          <button onClick={() => setModal(false)} className=" text-right">
-            <span>
+        <div className="flex items-start h-[83.333333%] ">
+          {modal ? (
+            <button
+              onClick={() => setModal(false)}
+              className="pt-2 pr-2"
+            >
               <svg
-                fill="#000000"
+                fill="#fff"
                 height="20"
                 width="20"
                 version="1.1"
@@ -34,29 +31,37 @@ const CapPage = ({ image, tile, setModal, list, modal }) => {
 	c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"
                 />
               </svg>
-            </span>
-          </button>
-        ) : (
-          ""
-        )}
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
 
-        <img
+        <div
           className={`${
-            modal ? "" : "hidden"
-          } w-full border-2 border-slate-300`}
-          src={image}
-          alt="imagen"
-        />
-        <h1 className="text-center font-bold my-3 text-lg">
-          {modal ? tile : ""}
-        </h1>
-        <ul className="list-disc list-inside ">
-          {list.map((l) => (
-            <li key={l} className="py-5 font-medium">
-              {l}
-            </li>
-          ))}
-        </ul>
+            modal
+              ? "md:w-2/4 cap-page-animation-true"
+              : "cap-page-animation-false"
+          }  text-black border-black cap-page-animation scb overflow-auto rounded-xl bg-white`}
+        >
+          <img
+            className={`${
+              modal ? "" : "hidden"
+            } w-full border-2 border-slate-300`}
+            src={image}
+            alt="imagen"
+          />
+          <h1 className="text-center font-bold my-3 text-lg">
+            {modal ? tile : ""}
+          </h1>
+          <ul className="list-disc list-inside ">
+            {list.map((l) => (
+              <li key={l} className="py-5 font-medium">
+                {l}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
